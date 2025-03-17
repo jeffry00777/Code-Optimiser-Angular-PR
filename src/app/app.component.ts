@@ -68,7 +68,7 @@ export class AppComponent  {
     if (!this.unorganizedCode.trim()) return;
 
     const payload = { question: this.unorganizedCode };
-    this.http.post<any>('http://127.0.0.1:8000/ask', payload).subscribe({
+    this.http.post<any>('https://python-be-code-optimizer-5.onrender.com/ask', payload).subscribe({
       next: (response) => {
         console.log(response.optimized_code);
         this.organizedCode = response.optimized_code || "⚠️ AI did not provide a response.";
