@@ -1,0 +1,172 @@
+<div class="nn">
+  <!-- Top Toolbar -->
+  <mat-toolbar class="toolbar">
+    <button
+      mat-icon-button
+      class="icon menu-button"
+      matTooltip="Open Menu"
+      (click)="toggleDrawer()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <i class="bi bi-arrow-repeat code company-icon"></i>
+    <div class="name">Code Optimizer</div>
+
+    <!-- Centered Navigation Links -->
+    <div class="tool-bar-components">
+      <a mat-button routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </a>
+
+      <a mat-button routerLink="/features">
+        <mat-icon>star</mat-icon>
+        <span>Features</span>
+      </a>
+
+      <a mat-button routerLink="/pricing">
+        <mat-icon>attach_money</mat-icon>
+        <span>Pricing</span>
+      </a>
+
+      <a mat-button routerLink="/about">
+        <mat-icon>info</mat-icon>
+        <span>About</span>
+      </a>
+    </div>
+
+    <!-- Right-Side Icons -->
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="tool-bar-question">
+      <i class="bi bi-question-circle"></i>
+    </button>
+    <button mat-icon-button class="tool-bar">
+      <i class="bi bi-gear-fill"></i>
+    </button>
+    <button mat-icon-button class="tool-bar-grid">
+      <i class="bi bi-grid-3x3-gap-fill"></i>
+    </button>
+  </mat-toolbar>
+
+  <!-- Sidebar -->
+  <mat-drawer-container class="sidenav-container" autosize>
+    <mat-drawer #drawer mode="over" class="sidenav">
+      <mat-nav-list>
+        <mat-list-item
+          ><a mat-button routerLink="/dashboard">Dashboard</a></mat-list-item
+        >
+        <mat-list-item
+          ><a mat-button routerLink="/features">Features</a></mat-list-item
+        >
+        <mat-list-item
+          ><a mat-button routerLink="/pricing">Pricing</a></mat-list-item
+        >
+        <mat-list-item
+          ><a mat-button routerLink="/about">About</a></mat-list-item
+        >
+      </mat-nav-list>
+    </mat-drawer>
+
+    <!-- Main Content -->
+    <mat-drawer-content class="content">
+      <router-outlet></router-outlet>
+
+      <!-- Page Header -->
+      <div class="page-content">
+        <p style="color: blue">Free Tool</p>
+        <h1 class="heading">Code Optimizer</h1>
+        <p>
+          Easily optimize your code in just a few steps! Simply paste your code,
+          choose the desired optimization tab, and click the format button.
+        </p>
+      </div>
+
+      <!-- ✅ Parent Code Container (No Nesting Issues) -->
+      <div class="code-container">
+        <!-- ✅ First Card: Input -->
+        <div class="card">
+          <mat-tab-group>
+            <mat-tab label="Autodetect"></mat-tab>
+          </mat-tab-group>
+
+          <div class="code-input">
+            <textarea
+              [(ngModel)]="unorganizedCode"
+              placeholder="Paste your unorganized code here"
+            ></textarea>
+          </div>
+
+          <div class="actions">
+            <button
+              mat-button
+              class="format-btn"
+              style="color: rgb(0, 0, 1)"
+              (click)="formatCode()"
+            >
+              Optimize
+            </button>
+            <button
+              mat-button
+              class="clear-btn"
+              style="color: rgb(0, 0, 1)"
+              (click)="clearCode()"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- ✅ Second Card: Keep in DOM but Hide When Not Needed -->
+        <ng-container *ngIf="isOrganised">
+          <div class="card organised">
+            <mat-tab-group>
+              <mat-tab label="Optimized Code"></mat-tab>
+            </mat-tab-group>
+            <div>
+              <textarea
+                class="code-output"
+                [(ngModel)]="organizedCode"
+                readonly
+              ></textarea>
+            </div>
+            <div class="button-container">
+              <!-- Copy Button -->
+              <button
+                mat-button
+                class="custom-button"
+                style="color: rgb(0, 0, 1)"
+                (click)="copyCode()"
+              >
+                <mat-icon>content_copy</mat-icon>
+                Copy
+              </button>
+
+              <!-- Download Button -->
+              <button
+                mat-button
+                class="custom-button"
+                style="color: rgb(0, 0, 1)"
+                (click)="downloadCode()"
+              >
+                <mat-icon>download</mat-icon>
+                Download
+              </button>
+
+              <!-- Open in a new window Button -->
+              <button
+                mat-button
+                class="custom-button"
+                style="color: rgb(0, 0, 1)"
+                (click)="openInNewWindow()"
+              >
+                <mat-icon>open_in_new</mat-icon>
+                Open in a new window
+              </button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

@@ -1,0 +1,282 @@
+  /* General Styles */
+.nn {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: rgba(10, 137, 240, 0.355);
+  }
+    .name {
+      padding-left: 10px;
+      font-size: larger;
+      font-weight: bolder;
+    }
+    
+    /* Remove Default Margins & Padding */
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: rgba(10, 137, 240, 0.355) !important;
+    }
+    
+    /* Ensure Toolbar Takes Full Width */
+    .toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px; /* Standard Material Toolbar height */
+      z-index: 1000;
+      background: #eaebed;
+      color: black;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      width: 100%;
+    }
+    
+    /* Fix Sidebar Layout */
+    .sidenav-container {
+      display: flex;
+      flex-direction: column;
+      height: auto; /* Allows content to expand naturally */
+      min-height: 100vh; /* Ensures it takes up full height */
+    }
+    
+    /* Ensure Content Starts Directly Below the Toolbar */
+    .content {
+      background-color: rgba(10, 137, 240, 0.355);
+      margin-top: 30px; /* Ensures content starts directly below the toolbar */
+      padding: 20px;
+      flex-grow: 1; /* Ensures it expands correctly */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    
+    /* Fix Page Content Placement */
+    .page-content {
+      text-align: center;
+      width: 100%;
+      max-width: 800px;
+      padding: 20px 0;
+      margin: 0 auto;
+      min-height: auto; 
+    }
+    
+    /* Reduce Gap Between Text Elements */
+    .page-content p {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+    
+    .heading {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 0;
+    }
+    
+    /* Centered Navigation */
+    .tool-bar-components {
+      display: flex;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      gap: 30px;
+    }
+    
+    /* Toolbar Links */
+    .tool-bar-components a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      padding: 8px 12px;
+    }
+    
+    .tool-bar-components a:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+    
+    /* Sidebar Styles */
+    .sidenav {
+      width: 250px;
+    }
+    
+    /* Right Side Icons */
+    .example-spacer {
+      flex-grow: 1;
+    }
+    
+    /* Hide Menu Button on Large Screens */
+    .menu-button {
+      display: none;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .tool-bar-components {
+        display: none;
+      }
+      .menu-button {
+        display: block;
+      }
+    }
+    /* General Styles */
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .code-container {
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
+    }
+    
+    .header-text {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    
+    /* Card */
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Code Input */
+    .code-input textarea {
+      width: 100%;
+      height: 200px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 16px;
+      outline: none;
+      resize: none;
+      color: #333;
+    }
+    
+    /* Actions */
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+    
+    /* Buttons */
+    .format-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      background-color: #78a9de;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    
+    
+    .format-btn:hover {
+      background-color: #5383b6;
+    }
+    .clear-btn:hover{
+      background-color: #5383b6;
+    }
+    .custom-button:hover{
+      background-color: #5383b6;
+    }
+
+    .load-btn,
+    .upload-btn,
+    .clear-btn,
+    .custom-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #78a9de;
+      color: #333;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    
+
+    /* Tab Size Dropdown */
+    .tab-size {
+      min-width: 120px;
+    }
+    
+    /* Ensure Consistent Spacing Even When Hidden */
+    .organised {
+      height: auto;
+      opacity: 1;
+      margin-top: 20px; /* Add spacing so it doesn’t shift */
+    }
+    
+    
+    /* Fix Card Layout */
+    .card {
+      width: 800px;
+      max-width: 800px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Fix Textarea Alignment */
+    .code-input textarea {
+      width: 700px;
+      height: 200px;
+      font-family: monospace;
+      background-color: #f8f9fa;
+      border: 1px solid #ccc;
+      padding: 10px;
+      color: #333;
+      resize: vertical;
+    }
+    
+    .code-output{
+      width: 700px;
+      height: 200px;
+      font-family: monospace;
+      background-color: #f8f9fa;
+      border: 1px solid #ccc;
+      padding: 10px;
+      color: #333;
+      resize: vertical;
+    }
+    .second{
+      margin-top: 20px;
+    }
+    .button-container {
+      display: flex;
+      gap: 10px; /* ✅ Adds space between buttons */
+  }
+  
+.mat{
+  font-size: larger;
+  font-weight: bolder;
+}
+  
+    
